@@ -5,7 +5,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-
+import android.util.Log
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,9 +17,12 @@ class MainActivity : AppCompatActivity() {
                 var Address = "34 Cheeseburger street"
                     var isMale = true
                         val dayofbirth = 23
-                            val moonthOfBirth = 10
+                            val monthOfBirth = 10
                                 val yearOfBirth = 2006
-
+        Log.d("Personalinfo" , "Your name is " + FirstName + " " + LastName + " "
+                + "Your address" + Address + " " + "Are you male" + isMale + "" + "Your day of birth"
+                + dayofbirth + "" + "your month of birth" + monthOfBirth + "" + "your year of birth"
+                + yearOfBirth + "" )
 
 
 
