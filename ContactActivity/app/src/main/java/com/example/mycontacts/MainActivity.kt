@@ -12,19 +12,33 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
-       var FirstName = "Levi"
-            var LastName = "Solomon"
-                var Address = "34 Cheeseburger street"
-                    var isMale = true
+       val firstName = "Levi"
+            val lastName = "Solomon"
+                val address = "34 Cheeseburger street"
+                    val isMale = true
                         val dayofbirth = 23
                             val monthOfBirth = 10
                                 val yearOfBirth = 2006
-        Log.d("Personalinfo" , "Your name is " + FirstName + " " + LastName + " "
-                + "Your address" + Address + " " + "Are you male" + isMale + "" + "Your day of birth"
-                + dayofbirth + "" + "your month of birth" + monthOfBirth + "" + "your year of birth"
-                + yearOfBirth + "" )
+        Log.d("Personalinfo" , "Your name is " + firstName + " " + lastName + " "
+                + "Your address " + address + " " + "Are you male " + isMale + " " + "Your day of birth "
+                + dayofbirth + " " + "your month of birth " + monthOfBirth + " " + "your year of birth "
+                + yearOfBirth + " ")
 
+        fun main() {
 
+            print("Enter the student's age: ")
+            val age = readlnOrNull()?.toIntOrNull() ?: 0
+
+            val yearsUntil100 = 100 - age
+            val ageInMonths = age * 12
+            val ageInDays = age * 365
+            val remainder = age % 5
+
+            println("Years until 100: $yearsUntil100")
+            println("Age in months: $ageInMonths")
+            println("Age in days (no leap years): $ageInDays")
+            println("Age mod 5: $remainder")
+        }
 
         setContentView(R.layout.activity_main)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
