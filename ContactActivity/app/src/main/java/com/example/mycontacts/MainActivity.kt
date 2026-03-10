@@ -24,21 +24,33 @@ class MainActivity : AppCompatActivity() {
                 + dayofbirth + " " + "your month of birth " + monthOfBirth + " " + "your year of birth "
                 + yearOfBirth + " ")
 
-        fun main() {
+        fun runAgeCalculator() {
+            val MONTHS_PER_YEAR = 12
+            val DAYS_PER_YEAR = 365
+            val CYCLE = 5
+            val MAX_AGE = 100
 
             print("Enter the student's age: ")
-            val age = readlnOrNull()?.toIntOrNull() ?: 0
+            val age = readlnOrNull()?.toIntOrNull()
 
-            val yearsUntil100 = 100 - age
-            val ageInMonths = age * 12
-            val ageInDays = age * 365
-            val remainder = age % 5
+            if (age == null || age < 0 || age > 150) {
+                println("Please enter a valid age (0–150).")
+                return
+            }
+
+            val yearsUntil100 = MAX_AGE - age
+            val ageInMonths = age * MONTHS_PER_YEAR
+            val ageInDays = age * DAYS_PER_YEAR
+            val yearsIntoCurrentCycle = age % CYCLE
 
             println("Years until 100: $yearsUntil100")
             println("Age in months: $ageInMonths")
-            println("Age in days (no leap years): $ageInDays")
-            println("Age mod 5: $remainder")
+            println("Age in days (approx.): $ageInDays")
+            println("Years into current 5-year cycle: $yearsIntoCurrentCycle")
         }
+
+        fun main() = runAgeCalculator()
+
 
         setContentView(R.layout.activity_main)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
